@@ -1,7 +1,8 @@
 {
     "autoload":{
         "psr-4":{
-            "Http\\":"src/Http"
+            "Http\\":"src/Http",
+            "Domain\\":"src/Domain"
         }
     }
 }

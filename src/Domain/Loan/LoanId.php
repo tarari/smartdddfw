@@ -1,6 +1,6 @@
 <?php
 
-    namespace App\Domain\Loan;
+    namespace Domain\Loan;
 
 use InvalidArgumentException;
 
