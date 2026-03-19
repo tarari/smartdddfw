@@ -1,5 +1,5 @@
 <?php
-namespace App\Domain\User;
+namespace Domain\User;
 
 class UserId{
     private string $id;

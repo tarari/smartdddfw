@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Domain\Loan;
+namespace Domain\Loan;
 
-use App\Domain\Loan\Loan;
-use App\Domain\Loan\LoanId;
+use Domain\Loan\Loan;
+use Domain\Loan\LoanId;
 
-interface ILoanRepository{
+interface LoanRepository{
     public function save(Loan $loan):void;
-    public function findById(LoanId $id):?Loan;    
+    public function byId(LoanId $id):?Loan;    
 }

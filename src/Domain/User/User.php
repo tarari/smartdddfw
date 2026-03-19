@@ -6,7 +6,7 @@
     use Doctrine\ORM\Mapping\Column;
     use Doctrine\ORM\Mapping\Entity;
     use Doctrine\ORM\Mapping\Id;
-    use App\Domain\Loan\Loan;
+    use Domain\Loan\Loan;
     use Doctrine\ORM\Mapping\OneToMany;
 
     #[Entity]

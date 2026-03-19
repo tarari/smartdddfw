@@ -1,15 +1,14 @@
 <?php
 
-namespace App\Domain\Book;
+namespace Domain\Book;
 
-use App\Domain\Book\Book;
-use App\Domain\Book\BookId;
+use Domain\Book\Book;
+use Domain\Book\BookId;
 
 
 interface BookRepository{
     public function save(Book $book):void;
-    public function find(BookId $id):?Book;
-    public function update(Book $book):void;
+    public function byId(BookId $id):?Book;
     public function findAll():array;
     
 }

@@ -1,7 +1,7 @@
 <?php
 
 
-    namespace App\Domain\Book;
+    namespace Domain\Book;
 
 use Doctrine\ORM\Mapping\Id;
 use Doctrine\ORM\Mapping\Table;
