@@ -1,20 +1,21 @@
 <?php
 namespace Http;
 
+use Http\Controllers\BookController;
+
 
 class Router
 {
     public function dispatch(string $method, string $uri)
     {
+        $controller=new BookController();
+        
         if ($method === 'GET' && $uri === '/api/books') {
-            return json_encode(['message' => 'List of books']);
+            return $controller->index();
         }
 
         if ($method === 'GET' && preg_match('#^/api/books/(\d+)$#', $uri, $matches)) {
-            return json_encode([
-                'message' => 'Book detail',
-                'id' => $matches[1]
-            ]);
+            return $controller->show((int)$matches[1]);
         }
 
         http_response_code(404);
