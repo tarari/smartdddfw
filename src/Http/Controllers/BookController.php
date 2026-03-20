@@ -15,4 +15,11 @@ class BookController {
             
         ]);
     }
+    public function store(){
+        $input= json_decode(file_get_contents('php://input'),true);
+        return json_encode([
+            'message'=>'Book created',
+            'data'=>$input
+        ]);
+    }
 }
