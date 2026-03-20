@@ -17,6 +17,11 @@ class Router
         if ($method === 'GET' && preg_match('#^/api/books/(\d+)$#', $uri, $matches)) {
             return $controller->show((int)$matches[1]);
         }
+        if($method==='POST'&& $uri==='/api/books'){
+            http_response_code(201);            
+            return $controller->store();
+            
+        }
 
         http_response_code(404);
         return json_encode(['error' => 'Not Found']);
