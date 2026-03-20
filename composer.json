@@ -2,7 +2,10 @@
     "autoload":{
         "psr-4":{
             "Http\\":"src/Http",
-            "Domain\\":"src/Domain"
-        }
+            "Domain\\":"src/Domain",
+            "Application\\":"src/Application",
+            "Infrastructure\\":"src/Infrastructure"
+        },
+        "files":["src/helper.php"]
     }
 }

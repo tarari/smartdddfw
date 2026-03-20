@@ -22,6 +22,8 @@ class Router
             return $controller->store();
             
         }
+        //Test: curl -X POST -d '{"id":3,"title":"paco jote"}' http://localhost:8000/api/books
+
 
         http_response_code(404);
         return json_encode(['error' => 'Not Found']);
