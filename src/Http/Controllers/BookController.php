@@ -4,7 +4,7 @@ namespace Http\Controllers;
 
 use Application\GetBookUseCase;
 use Infrastructure\Persistence\InMemory\InMemoryBookRepository;
-
+use Http\ResponseJson;
 
 class BookController {
     
@@ -20,16 +20,23 @@ class BookController {
         $json=$useCase->execute($id);
         $book= json_decode($json);
         //dd($book);
-        return json_encode([
+        $data=['msg'=>'Book created',
+                [
                 'id'=>$book->id,
                  'title'=>$book->title
-                ]);
+                ]];  
+        
+        $res=new ResponseJson(200,$data);       
+        $res->send();
+        
     }
     public function store(){
         $input= json_decode(file_get_contents('php://input'),true);
-        return json_encode([
-            'message'=>'Book created',
+        $response=new ResponseJson(201,
+            ['message'=>'Book created',
             'data'=>$input
         ]);
+        $reponse->send();
+        
     }
 }
